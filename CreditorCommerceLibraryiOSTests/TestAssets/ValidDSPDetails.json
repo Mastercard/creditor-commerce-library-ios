@@ -1,0 +1,18 @@
+[
+	{
+		"dspName": "Partner Bank",
+		"dspUseCaseType": 3,
+		"dspLogo": "https://zts4.co.uk/zapp-creditor-commerce/cdn-files/dsp-logos/partner-bank.png",
+		"dspUniversalLink": "https://ahi1.zts2.co.uk/",
+		"dspUniqueId": "0d63f445-98b2-445b-b07b-3f90b748fe2e",
+		"dspLogoHash": "JtRQFjnON6ny_Gps_cBHuYiR4ZeKaEL50miNUrI8X28="
+	},
+	{
+		"dspName": "Partner 2 Bank",
+		"dspUseCaseType": 3,
+		"dspLogo": "https://zts4.co.uk/zapp-creditor-commerce/cdn-files/dsp-logos/partner-2-bank.png",
+		"dspUniversalLink": "https://merchant.zts2.co.uk/",
+		"dspUniqueId": "partner2BankV5002",
+		"dspLogoHash": "E1m95WPD67Xic62yQlOD27MHE5rf_k5ku-NwmhayUqM="
+	}
+	]

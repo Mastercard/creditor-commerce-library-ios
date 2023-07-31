@@ -1,0 +1,69 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CreditorCommerceLibraryiOS
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+@_exported import CreditorCommerceLibraryiOS
+import Foundation
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public enum LibraryError : Swift.Int, Swift.Error {
+  case invalidDspID
+  case invalidLifecycleID
+  case invalidBusinessType
+  case invalidJourneyType
+  case invalidManifestURL
+  case invalidURLProtocol
+  case invalidManifestFile
+  case unableToInvokeDSP
+  case timeoutError
+  case networkError
+  case technicalError
+  public var description: Swift.String {
+    get
+  }
+  public var info: (code: Swift.Int, description: Swift.String) {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum JourneyType : Swift.String {
+  case requestToPay
+  case requestToLink
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class CreditorCommerceLibraryWrapper {
+  public static func getDspDetails(dspManifestUrl: Swift.String, isVerificationRequired: Swift.Bool = true, completionHandler: @escaping (Swift.Result<[CreditorCommerceLibraryiOS.DspDetails], CreditorCommerceLibraryiOS.LibraryError>) -> Swift.Void)
+  public static func generateUniversalLink(dspID: Swift.String, lifeCycleID: Swift.String, businessType: Swift.Int, journeyType: CreditorCommerceLibraryiOS.JourneyType, completionHandler: (Swift.Result<Swift.String, CreditorCommerceLibraryiOS.LibraryError>) -> Swift.Void)
+  public static func invokeApp(dspID: Swift.String, lifeCycleID: Swift.String, businessType: Swift.Int, journeyType: CreditorCommerceLibraryiOS.JourneyType, completionHandler: @escaping (Swift.Result<Swift.Bool, CreditorCommerceLibraryiOS.LibraryError>) -> Swift.Void)
+  @objc deinit
+}
+public struct DspDetails : Swift.Equatable {
+  public let dspName: Swift.String
+  public let dspUseCaseType: Swift.Int
+  public let dspLogo: Swift.String
+  public let dspUniqueID: Swift.String
+  public let dspLogoHash: Swift.String
+  public static func == (a: CreditorCommerceLibraryiOS.DspDetails, b: CreditorCommerceLibraryiOS.DspDetails) -> Swift.Bool
+}
+extension CreditorCommerceLibraryiOS.DspDetails : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension CreditorCommerceLibraryiOS.LibraryError : Swift.Equatable {}
+extension CreditorCommerceLibraryiOS.LibraryError : Swift.Hashable {}
+extension CreditorCommerceLibraryiOS.LibraryError : Swift.RawRepresentable {}
+extension CreditorCommerceLibraryiOS.JourneyType : Swift.Equatable {}
+extension CreditorCommerceLibraryiOS.JourneyType : Swift.Hashable {}
+extension CreditorCommerceLibraryiOS.JourneyType : Swift.RawRepresentable {}

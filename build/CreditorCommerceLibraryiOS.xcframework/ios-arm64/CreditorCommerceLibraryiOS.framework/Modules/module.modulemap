@@ -1,0 +1,11 @@
+framework module CreditorCommerceLibraryiOS {
+  umbrella header "CreditorCommerceLibraryiOS.h"
+
+  export *
+  module * { export * }
+}
+
+module CreditorCommerceLibraryiOS.Swift {
+  header "CreditorCommerceLibraryiOS-Swift.h"
+  requires objc
+}
